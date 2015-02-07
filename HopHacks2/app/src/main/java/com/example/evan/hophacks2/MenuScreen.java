@@ -8,16 +8,20 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
 
 
-public class MenuScreen extends ActionBarActivity {
+public class MenuScreen extends ActionBarActivity implements View.OnTouchListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //program here
+
         setContentView(R.layout.activity_menu_screen);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
@@ -47,6 +51,11 @@ public class MenuScreen extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
+        return false;
     }
 
     /**
