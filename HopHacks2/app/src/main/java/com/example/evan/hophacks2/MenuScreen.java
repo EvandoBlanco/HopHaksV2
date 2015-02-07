@@ -13,14 +13,36 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
 
+import java.util.ArrayList;
+
 
 public class MenuScreen extends ActionBarActivity implements View.OnTouchListener{
+
+    private ArrayList<String> roles;
+    private ArrayList<String> events;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         //program here
+        events = new ArrayList<String>();
+        events.add("Go to store");
+        events.add("Buy flowers");
+        events.add("Work out");
+
+        for (String s : events) {
+            System.out.println(s);
+        }
+
+        roles = new ArrayList<String>();
+        roles.add("Student");
+        roles.add("President");
+
+        for (String st : roles) {
+            st = "I am a(n) " + st;
+            System.out.println(st);
+        }
 
         setContentView(R.layout.activity_menu_screen);
         if (savedInstanceState == null) {
